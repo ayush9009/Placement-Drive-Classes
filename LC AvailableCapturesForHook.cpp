@@ -1,7 +1,7 @@
 class Solution {
 public:
     int numRookCaptures(vector<vector<char>>& board) {
-        int x,y;
+        int x,y
         int n=board.size();
         int m=board[0].size();
         for(int i=0;i<board.size();i++){
