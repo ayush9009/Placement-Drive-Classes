@@ -33,7 +33,7 @@ public:
        while(i<n && board[i][j]!='B'){
             if(board[i][j]=='p'){
                 cnt++;
-                break;
+                break
             }
             i++;
        }
