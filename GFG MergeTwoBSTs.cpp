@@ -3,7 +3,7 @@ class Solution
     public:
     //Function to return a list of integers denoting the node 
     //values of both the BST in a sorted order.
-    vector<int>result;
+    vector<int>result
     
     // void createBST()
     vector<int> merge(Node *root1, Node *root2)
