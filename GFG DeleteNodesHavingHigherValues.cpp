@@ -4,7 +4,7 @@ class Solution
     Node *compute(Node *head)
     {
         // your code goes here
-        Node* cur=head
+        Node* cur=head;
         vector<int>result;
         while(cur!=NULL){
             result.push_back(cur->data);
