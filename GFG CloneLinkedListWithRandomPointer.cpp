@@ -2,7 +2,7 @@ lass Solution {
 public:
     //VVIP  QUESTION (Need Revision Also before going to coding round)
     Node *copyList(Node *head){
-        Node* temp=head;
+        Node* temp=head
         //First step
         while(temp!=NULL){
             Node *newNode=new Node(temp->data);
