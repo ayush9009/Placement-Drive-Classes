@@ -10,10 +10,10 @@ public:
 // eg:s="732" target=13 7+3*2 if we dont use bodmas 10*2=20 but this is wrong
 // 7+3*2 means 7+6=13 
 // means curSum-prevNum+prevNum*curNum i.e 10-3+3*2=7+3*2=7+6=13
-void dfs(int i,int sum,int prev,string num,vector<string>&ans,string curPath,int target){
+void dfs(int i,long sum,long prev,string num,vector<string>&ans,string sumPath,int target){
     if(i==num.size()){
         if(sum==target){
-            ans.push_back(curPath);
+            ans.push_back(sumPath);
         }
         return;
     }
@@ -21,6 +21,7 @@ void dfs(int i,int sum,int prev,string num,vector<string>&ans,string curPath,int
         if(j>i && num[i]=='0'){
             // avoid leading zeros
             break;
+            
         }
         long number=stol(num.substr(i,j-i+1));
         string tempPath=num.substr(i,j-i+1);
@@ -29,9 +30,9 @@ void dfs(int i,int sum,int prev,string num,vector<string>&ans,string curPath,int
             //if it is first index measn i.e "732" to i=0 means 7 hai to j+1bas
             dfs(j+1,number,number,num,ans,tempPath,target);
         }else{
-            dfs(j+1,sum+number,number,num,ans,curPath + '+' + tempPath,target);
-            dfs(j+1,sum-number,-number,num,ans,curPath + '-' + tempPath,target);
-            dfs(j+1,sum-prev+prev*number,prev*number,num,ans,curPath + '*' + tempPath,target);
+            dfs(j+1,sum+number,number,num,ans,sumPath + '+' + tempPath,target);
+            dfs(j+1,sum-number,-number,num,ans,sumPath + '-' + tempPath,target);
+            dfs(j+1,sum-prev+(prev*number),(prev*number),num,ans,sumPath + '*' + tempPath,target);
         }
     }
 }
